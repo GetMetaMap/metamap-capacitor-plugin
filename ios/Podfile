@@ -9,7 +9,6 @@ end
 
 target 'Plugin' do
   capacitor_pods
-   pod 'Mati-Global-ID-SDK'
 end
 
 target 'PluginTests' do

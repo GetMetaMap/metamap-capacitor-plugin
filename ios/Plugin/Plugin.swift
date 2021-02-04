@@ -9,22 +9,37 @@ import MatiGlobalIDSDK
 @objc(MatiCapacitorPlugin)
 public class MatiCapacitorPlugin: CAPPlugin {
     
-    @objc func initialization(_ call: CAPPluginCall) {
-        MFKYC.register(clientId: call.getString["clientId"], metadata: call.getString["metadata"])
-        call.success()
-    }
+    private var matiButton: MFKYCButton?
     
-    @objc func setParams(_ call: CAPPluginCall) {
-        let matiButton = MFKYCButton()
-        matiButton.flowId = call.getString("flowId")
-        DispatchQueue.main.async { [weak self] in
-            guard
-                self?.widget.view.superview == nil,
-                let widgetView = self?.widget.view else { return }
-            let mainView = self?.bridge.viewController.view
-            mainView?.addSubview(matiButton)
+    @objc func initialization(_ call: CAPPluginCall) {
+        DispatchQueue.main.async {
+            MFKYC.register(clientId: call.getString("clientId") ?? "", metadata: call.getObject("metadata") ?? nil)
         }
         call.success()
     }
     
+    @objc func setParams(_ call: CAPPluginCall) {
+        self.matiButton = MFKYCButton()
+        matiButton?.flowId = call.getString("flowId")
+        call.success()
+    }
+    
+    @objc func showFlow() {
+        if self.matiButton == nil {
+            self.matiButton = MFKYCButton()
+            self.matiButton?.sendActions(for: .touchUpInside)
+        } else {
+            self.matiButton?.sendActions(for: .touchUpInside)
+        }
+    }
+}
+
+extension MatiCapacitorPlugin: MFKYCDelegate {
+    public func mfKYCLoginSuccess(identityId: String) {
+        self.bridge.triggerWindowJSEvent(eventName:  "mfKYCLoginSuccess", data: identityId)
+    }
+    
+    public func mfKYCLoginCancelled() {
+        self.bridge.triggerWindowJSEvent(eventName: "mfKYCLoginCancelled")
+    }
 }
