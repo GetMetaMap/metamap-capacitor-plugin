@@ -104,3 +104,6 @@ public class MainActivity extends BridgeActivity {
 ## Still have question? Please ask us in issue tab on GitHub and use our "Examples" folder.
 
 
+#### Check additional info
+npm package https://www.npmjs.com/package/@aposnovmati/mati-capacitor-plugin
+capacitor docs https://capacitorjs.com/docs
