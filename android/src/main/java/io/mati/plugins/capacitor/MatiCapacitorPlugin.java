@@ -34,11 +34,14 @@ public class MatiCapacitorPlugin extends Plugin implements MatiCallback {
 
     @PluginMethod
     public void initialization(PluginCall call) {
-
-        Mati.init(getContext(), call.getString("clientId"));
-
-        MatiLoginManager.getInstance().registerCallback(mCallbackManager, this);
-
+        final String clientId = call.getString("clientId");
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Mati.init(bridge.getActivity().getBaseContext(), clientId);
+                MatiLoginManager.getInstance().registerCallback(mCallbackManager, MatiCapacitorPlugin.this);
+            }
+        });
         call.success();
     }
 
@@ -51,8 +54,10 @@ public class MatiCapacitorPlugin extends Plugin implements MatiCallback {
     @PluginMethod
     public void showFlow(PluginCall call) {
         MatiLoginButtonLauncher.weakReferenceCallbackManager = new WeakReference<>(mCallbackManager);
-        Intent intent = new Intent(getActivity(), MatiCapacitorPlugin.MatiLoginButtonLauncher.class);
+
+        Intent intent = new Intent(getContext(), MatiLoginButtonLauncher.class);
         getActivity().startActivity(intent);
+
         call.success();
     }
 
@@ -69,55 +74,6 @@ public class MatiCapacitorPlugin extends Plugin implements MatiCallback {
     @Override
     public void onSuccess(@Nullable LoginResult loginResult) {
         bridge.triggerWindowJSEvent("mfKYCLoginSuccess", String.format("{ 'login success': %s }", loginResult.getIdentityId()));
-    }
-
-
-    public static class MatiLoginButtonLauncher extends AppCompatActivity
-    {
-        public static WeakReference<MatiCallbackManager> weakReferenceCallbackManager;
-        Handler mMainHandler ;
-        MatiLoginButton mMatiLoginButton;
-        @Override
-        protected void onCreate(@Nullable Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(getView());
-            mMainHandler = new Handler(this.getMainLooper());
-            mMainHandler.post (new Runnable() {
-                @Override
-                public void run() {
-                    mMatiLoginButton.performClick();
-                }
-            });
-
-        }
-
-        public View getView(){
-            FrameLayout layout = new FrameLayout(this);
-            layout.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
-                    FrameLayout.LayoutParams.MATCH_PARENT));
-            mMatiLoginButton = new MatiLoginButton(this);
-            if (SPEC_FLOW_ID != null) {
-                mMatiLoginButton.setMFlowId(SPEC_FLOW_ID);
-            }
-            mMatiLoginButton.setVisibility(View.INVISIBLE);
-            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(100, 100);
-            params.setMargins(-100, 0, 0, 0);
-            mMatiLoginButton.setLayoutParams(params);
-            layout.addView(mMatiLoginButton);
-
-            return layout;
-        }
-
-        @Override
-        protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-            super.onActivityResult(requestCode, resultCode, data);
-            if(weakReferenceCallbackManager != null && weakReferenceCallbackManager.get() != null){
-                if(weakReferenceCallbackManager.get().onActivityResult(requestCode, resultCode, data)){
-                    this.finish();
-                }
-            }
-
-        }
     }
 }
 
