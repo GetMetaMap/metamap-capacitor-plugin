@@ -8,6 +8,9 @@ Mati Capacitor plugin for SDK https://getmati.com
     
 ### then rebuild yours project
     ionic build
+    
+### and update capacitor files
+    npx cap sync 
 
 #### EXAMPLE OF APP
 your_index.html
@@ -95,6 +98,6 @@ public class MainActivity extends BridgeActivity {
     
     
     
-# Still have question? Please ask us in issue tab on GitHub and use our "Examples" folder.
+## Still have question? Please ask us in issue tab on GitHub and use our "Examples" folder.
 
 
