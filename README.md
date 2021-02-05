@@ -88,6 +88,8 @@ public class MainActivity extends BridgeActivity {
   }
 }
 ```
+### launch android
+    npx cap open android
 
 # iOS
 
@@ -96,7 +98,8 @@ public class MainActivity extends BridgeActivity {
       "minVersion": "11.4"
     }
     
-    
+### launch ios
+    npx cap open ios  
     
 ## Still have question? Please ask us in issue tab on GitHub and use our "Examples" folder.
 
