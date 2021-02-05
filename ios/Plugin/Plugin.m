@@ -6,4 +6,5 @@
 CAP_PLUGIN(MatiCapacitorPlugin, "MatiCapacitorPlugin",
            CAP_PLUGIN_METHOD(initialization, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(setParams, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(showFlow, CAPPluginReturnPromise);
 )
