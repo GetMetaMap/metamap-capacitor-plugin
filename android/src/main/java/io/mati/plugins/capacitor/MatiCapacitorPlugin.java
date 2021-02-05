@@ -97,6 +97,9 @@ public class MatiCapacitorPlugin extends Plugin implements MatiCallback {
             layout.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT,
                     FrameLayout.LayoutParams.MATCH_PARENT));
             mMatiLoginButton = new MatiLoginButton(this);
+            if (SPEC_FLOW_ID != null) {
+                mMatiLoginButton.setMFlowId(SPEC_FLOW_ID);
+            }
             mMatiLoginButton.setVisibility(View.INVISIBLE);
             FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(100, 100);
             params.setMargins(-100, 0, 0, 0);
