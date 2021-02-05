@@ -38,7 +38,6 @@ public class MatiCapacitorPlugin extends Plugin implements MatiCallback {
         Mati.init(getContext(), call.getString("clientId"));
 
         MatiLoginManager.getInstance().registerCallback(mCallbackManager, this);
-        MatiLoginManager.getInstance().registerCallback(mCallbackManager, Mati);
 
         call.success();
     }
