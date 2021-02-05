@@ -37,7 +37,7 @@
     "dist/",
     "ios/",
     "android/",
-    "MatiCapacitorPlugin.podspec"
+    "AposnovmatiMatiCapacitorPlugin.podspec"
   ],
   "keywords": [
     "capacitor",
