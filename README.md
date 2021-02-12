@@ -8,6 +8,9 @@ Mati Capacitor plugin for SDK https://getmati.com
     
 ### then rebuild yours project
     ionic build
+    
+### and update capacitor files
+    npx cap sync 
 
 #### EXAMPLE OF APP
 your_index.html
@@ -85,6 +88,8 @@ public class MainActivity extends BridgeActivity {
   }
 }
 ```
+### launch android
+    npx cap open android
 
 # iOS
 
@@ -93,8 +98,13 @@ public class MainActivity extends BridgeActivity {
       "minVersion": "11.4"
     }
     
+### launch ios
+    npx cap open ios  
     
-    
-# Still have question? Please ask us in issue tab on GitHub and use our "Examples" folder.
+## Still have question? Please ask us in issue tab on GitHub and use our "Examples" folder.
 
 
+#### Check additional info
+npm package https://www.npmjs.com/package/@aposnovmati/mati-capacitor-plugin
+
+capacitor docs https://capacitorjs.com/docs
