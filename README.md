@@ -69,6 +69,11 @@ export class Tab1Page {
 
 # Android
 ### register the plugin in your Activity
+
+Please be sure to be sync with gradle files, press this button
+
+![alt text](https://github.com/GetMati/mati-capacitor-plugin/blob/main/sync_project.png)
+
 ```java
 import io.mati.plugins.capacitor.MatiCapacitorPlugin;
 
