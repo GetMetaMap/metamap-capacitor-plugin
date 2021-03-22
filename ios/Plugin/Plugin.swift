@@ -1,6 +1,6 @@
 import Foundation
 import Capacitor
-import MatiGlobalIDSDK
+import MatiSDK
 
 /**
  * Please read the Capacitor iOS Plugin Development Guide
@@ -9,47 +9,36 @@ import MatiGlobalIDSDK
 @objc(MatiCapacitorPlugin)
 public class MatiCapacitorPlugin: CAPPlugin {
     
-    private var matiButton: MFKYCButton?
-    
-    @objc func initialization(_ call: CAPPluginCall) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            MFKYC.register(clientId: call.getString("clientId") ?? "", metadata: call.getObject("metadata") ?? nil)
-        }
-        call.success()
-    }
+    private var matiButton: MatiButton?
     
     @objc func setParams(_ call: CAPPluginCall) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.matiButton = MFKYCButton()
-            self.matiButton?.flowId = call.getString("flowId") ?? ""
+            self.matiButton = MatiButton()
+            self.matiButton?.setParams(clientId:  call.getString("clientId") ?? "",
+                                       flowId: call.getString("flowId") ?? "",
+                                       metadata: call.getObject("metadata") ?? nil)
             call.success()
         }
     }
     
-    @objc func showFlow(_ call: CAPPluginCall) {
+    @objc func showMatiFlow(_ call: CAPPluginCall) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            if self.matiButton == nil {
-                self.matiButton = MFKYCButton()
-                self.matiButton?.sendActions(for: .touchUpInside)
-            } else {
-                self.matiButton?.sendActions(for: .touchUpInside)
-            }
+            self.matiButton?.sendActions(for: .touchUpInside)
             call.success()
         }
     }
 }
 
-extension MatiCapacitorPlugin: MFKYCDelegate {
-    public func mfKYCLoginSuccess(identityId: String) {
-        self.bridge.triggerWindowJSEvent(eventName:  "mfKYCLoginSuccess", data: identityId)
-        debugPrint("mfKYCLoginSuccess: \(identityId)")
+extension MatiCapacitorPlugin: MatiButtonResultDelegate {
+    public func verificationSuccess(identityId: String) {
+        self.bridge.triggerWindowJSEvent(eventName:  "verificationSuccess:", data: identityId)
+        debugPrint("verificationSuccess: \(identityId)")
     }
     
-    public func mfKYCLoginCancelled() {
-        self.bridge.triggerWindowJSEvent(eventName: "mfKYCLoginCancelled")
-        debugPrint("mfKYCLoginCancelled")
+    public func verificationCancelled() {
+        self.bridge.triggerWindowJSEvent(eventName: "verificationCancelled")
+        debugPrint("verificationCancelled")
     }
 }
