@@ -1,4 +1,4 @@
-# Mati Capacitor plugin – ALPHA VERSION
+# Mati Capacitor plugin – BETA VERSION
 Mati Capacitor plugin for SDK https://getmati.com
 
 ### This is short tutorial to fast implement our SDK into ionic/Capacitor framework https://capacitorjs.com
@@ -38,20 +38,14 @@ export class Tab1Page {
   constructor() {}
 
   // the method that starts to show FLOW screens
-  showMFKYC() {
-      MatiCapacitorPlugin.showFlow();
-  }
-
-  ionViewWillEnter() {
-    let metadataParams = { param1: "value1" }; // variable for metadata params
-    let registerParams = { clientId: "YOUR_CLIENT_ID", metadata: metadataParams}; // variable for register params
-    MatiCapacitorPlugin.initialization(registerParams); // initialization main class
+  showMatiFLow() {
+      MatiCapacitorPlugin.showMatiFLow();
   }
 
   ionViewDidEnter() {
-    // button params
-    let buttonParams = { flowId: "YOUR_FLOW_ID" };   // button params, you can specify FLOW_ID
-    MatiCapacitorPlugin.setParams(buttonParams);
+    let metadataParams = { param1: "value1" }; // variable for metadata params
+    let registerParams = { clientId: "YOURS_CLIENT_ID", flowId: "YOURS_FLOW_ID", metadata: metadataParams}; // variable for register params
+    MatiCapacitorPlugin.setParams(registerParams); // initialization main class
 
     // methods handle of result
     window.addEventListener('mfKYCLoginSuccess', (verificationId) => {
