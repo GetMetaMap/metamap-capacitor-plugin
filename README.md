@@ -16,7 +16,7 @@ Mati Capacitor plugin for SDK https://getmati.com
 your_index.html
   
     <ion-content>
-    <ion-button className="matiButtonCss" (click)="showMatiFLow()">Show MatiFLow
+    <ion-button className="matiButtonCss" (click)="showMatiFlow()">Show MatiFlow
     </ion-button>
     </ion-content>
     
@@ -38,8 +38,8 @@ export class Tab1Page {
   constructor() {}
 
   // the method that starts to show FLOW screens
-  showMatiFLow() {
-      MatiCapacitorPlugin.showMatiFLow();
+  showMatiFlow() {
+      MatiCapacitorPlugin.showMatiFlow();
   }
 
   ionViewDidEnter() {
