@@ -9,9 +9,9 @@ import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
-import com.matilock.mati_kyc_sdk.MatiButton;
-import com.matilock.mati_kyc_sdk.Metadata;
-import com.matilock.mati_kyc_sdk.kyc.KYCActivity;
+import com.getmati.mati_sdk.MatiButton;
+import com.getmati.mati_sdk.Metadata;
+import com.getmati.mati_sdk.kyc.KYCActivity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -84,10 +84,11 @@ public class MatiCapacitorPlugin extends Plugin {
         return metadataBuilder.build();
     }
 
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    @Override
+    protected void handleOnActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == KYCActivity.REQUEST_CODE) {
             if(resultCode == KYCActivity.RESULT_OK) {
-                bridge.triggerWindowJSEvent("Verification success", String.format("{ 'login success': %s }", ""));
+                bridge.triggerWindowJSEvent("Verification success", String.format("{ 'login success': %s }", data.getStringExtra(KYCActivity.ARG_VERIFICATION_ID)));
             } else {
                 bridge.triggerWindowJSEvent("Verification cancelled");
             }
