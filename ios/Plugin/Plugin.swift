@@ -18,6 +18,7 @@ public class MatiCapacitorPlugin: CAPPlugin {
             self.matiButton?.setParams(clientId:  call.getString("clientId") ?? "",
                                        flowId: call.getString("flowId") ?? "",
                                        metadata: call.getObject("metadata") ?? nil)
+            MatiButtonResult.shared.delegate = self
             call.success()
         }
     }
