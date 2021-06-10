@@ -9,24 +9,13 @@ import MatiSDK
 @objc(MatiCapacitorPlugin)
 public class MatiCapacitorPlugin: CAPPlugin {
     
-    private var matiButton: MatiButton?
-    
-    @objc func setParams(_ call: CAPPluginCall) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self = self else { return }
-            self.matiButton = MatiButton()
-            self.matiButton?.setParams(clientId:  call.getString("clientId") ?? "",
-                                       flowId: call.getString("flowId") ?? "",
-                                       metadata: call.getObject("metadata") ?? nil)
-            MatiButtonResult.shared.delegate = self
-            call.success()
-        }
-    }
-    
     @objc func showMatiFlow(_ call: CAPPluginCall) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            self.matiButton?.sendActions(for: .touchUpInside)
+            MatiSDK.shared.showMatiFlow(clientId: call.getString("clientId") ?? "",
+                                    flowId: call.getString("flowId") ?? "",
+                                    metadata: call.getObject("metadata") ?? nil)
+            MatiButtonResult.shared.delegate = self
             call.success()
         }
     }

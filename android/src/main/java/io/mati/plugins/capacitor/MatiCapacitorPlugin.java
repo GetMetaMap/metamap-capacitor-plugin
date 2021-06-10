@@ -11,56 +11,30 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getmati.mati_sdk.MatiButton;
 import com.getmati.mati_sdk.Metadata;
-import com.getmati.mati_sdk.kyc.KYCActivity;
+import com.getmati.mati_sdk.MatiSdk;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import static android.app.Activity.RESULT_OK;
 import java.util.Iterator;
 
 @NativePlugin
 public class MatiCapacitorPlugin extends Plugin {
 
-    private MatiButton matiButton;
-
     @PluginMethod
-    public void setParams(PluginCall call) {
+    public void showMatiFlow(PluginCall call) {
         final String clientId = call.getString("clientId");
         final String flowId = call.getString("flowId");
         final JSONObject metadata = call.getObject("metadata", null);
-        getActivity().runOnUiThread(new Runnable() {
+
+        bridge.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                matiButton = new MatiButton(getActivity(), null);
-                matiButton.setParams(clientId,
+                MatiSdk.INSTANCE.startFlow(cordova.getActivity(),
+                        clientId,
                         flowId,
-                        "Default flow",
                         convertToMetadata(metadata));
             }
         });
-        call.success();
-    }
-
-    public AppCompatActivity getActivity() {
-        return (AppCompatActivity)bridge.getActivity();
-    }
-
-    @PluginMethod
-    public void showMatiFlow(PluginCall call) {
-        if (matiButton.getVm().getValue() != null) {
-            MatiButton.State matiState = matiButton.getVm().getValue();
-            MatiButton.SuccessState matiSuccess = (MatiButton.SuccessState) matiState;
-
-            Intent intent = new Intent(bridge.getActivity().getBaseContext(), KYCActivity.class);
-            intent.putExtra("ARG_ID_TOKEN", matiSuccess.getIdToken());
-            intent.putExtra("ARG_CLIENT_ID", matiSuccess.getClientId());
-            intent.putExtra("ARG_VERIFICATION_ID", matiSuccess.getVerificationId());
-            intent.putExtra("ARG_ACCESS_TOKEN", matiSuccess.getAccessToken());
-            intent.putExtra("ARG_VOICE_TXT", matiSuccess.getVoiceDataTxt());
-            intent.putExtra("STATE_LANGUAGE_ID", matiSuccess.getIdToken());
-            bridge.getActivity().startActivityForResult(intent, KYCActivity.REQUEST_CODE);
-        } else {
-            Log.e("Loading error", "Please check yours Mati client ID or internet connection");
-        }
 
         call.success();
     }
@@ -86,9 +60,9 @@ public class MatiCapacitorPlugin extends Plugin {
 
     @Override
     protected void handleOnActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == KYCActivity.REQUEST_CODE) {
-            if(resultCode == KYCActivity.RESULT_OK) {
-                bridge.triggerWindowJSEvent("Verification success", String.format("{ 'login success': %s }", data.getStringExtra(KYCActivity.ARG_VERIFICATION_ID)));
+        if(requestCode == MatiSdk.REQUEST_CODE) {
+            if(resultCode == RESULT_OK) {
+                bridge.triggerWindowJSEvent("Verification success", String.format("{ 'login success': %s }", data.getStringExtra(MatiSdk.ARG_VERIFICATION_ID)));
             } else {
                 bridge.triggerWindowJSEvent("Verification cancelled");
             }
