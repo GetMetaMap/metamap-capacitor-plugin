@@ -1,4 +1,4 @@
-# Mati Capacitor plugin – BETA VERSION
+# Mati Capacitor plugin
 Mati Capacitor plugin for SDK https://getmati.com
 
 ### This is short tutorial to fast implement our SDK into ionic/Capacitor framework https://capacitorjs.com
@@ -48,11 +48,11 @@ export class Tab1Page {
     MatiCapacitorPlugin.setParams(registerParams); // initialization main class
 
     // methods handle of result
-    window.addEventListener('mfKYCLoginSuccess', (verificationId) => {
+    window.addEventListener('Verification success', (verificationId) => {
       console.log("verification success:" + verificationId)
     });
 
-    window.addEventListener('mfKYCLoginCancelled', () => {
+    window.addEventListener('Verification cancelled', () => {
       console.log("verification cancelled")
     });
   }
