@@ -1,20 +1,16 @@
 package io.mati.plugins.capacitor;
 
 import android.content.Intent;
-import android.util.Log;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.getcapacitor.NativePlugin;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
-import com.getmati.mati_sdk.MatiButton;
 import com.getmati.mati_sdk.Metadata;
 import com.getmati.mati_sdk.MatiSdk;
+import static android.app.Activity.RESULT_OK;
 import org.json.JSONException;
 import org.json.JSONObject;
-import static android.app.Activity.RESULT_OK;
+
 import java.util.Iterator;
 
 @NativePlugin
@@ -29,7 +25,7 @@ public class MatiCapacitorPlugin extends Plugin {
         bridge.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                MatiSdk.INSTANCE.startFlow(cordova.getActivity(),
+                MatiSdk.INSTANCE.startFlow(getActivity(),
                         clientId,
                         flowId,
                         convertToMetadata(metadata));
@@ -68,8 +64,4 @@ public class MatiCapacitorPlugin extends Plugin {
             }
         }
     }
-
 }
-
-
-
