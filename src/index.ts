@@ -1,2 +1,9 @@
+import { registerPlugin } from '@capacitor/core';
+
+import type { MatiCapacitorPlugin } from './definitions';
+
+const MatiCapacitor = registerPlugin<MatiCapacitorPlugin>('MatiCapacitor', {});
+
 export * from './definitions';
-export * from './web';
+export { MatiCapacitor };
+  

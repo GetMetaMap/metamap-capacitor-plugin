@@ -1,9 +1,4 @@
-declare module '@capacitor/core' {
-  interface PluginRegistry {
-    MatiCapacitorPlugin: MatiCapacitorPluginPlugin;
+export interface MatiCapacitorPlugin {
+    showMatiFlow(options: object): Promise<{ verificationId: string }>;
   }
-}
-
-export interface MatiCapacitorPluginPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
-}
+  
