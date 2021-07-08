@@ -24,82 +24,43 @@ your_index.html
   
 ```javascript
 import { Component } from '@angular/core';
-import { Plugins } from '@capacitor/core';
 
-const { MatiCapacitorPlugin } = Plugins;
+import { MatiCapacitor } from "@aposnovmati/mati-capacitor-plugin";
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
 })
-
-export class Tab1Page {
+export class HomePage {
   constructor() {}
 
-  // the method that starts to show FLOW screens
   showMatiFlow() {
-    let metadataParams = { param1: "value1" }; // variable for metadata params
-    let registerParams = { clientId: "YOURS_CLIENT_ID", flowId: "YOURS_FLOW_ID", metadata: metadataParams}; // variable for register params
-      MatiCapacitorPlugin.showMatiFlow(registerParams);
+    let metadataParams = { param1: "value1" };
+    let registerParams = { clientId: "5c94e3c401ddc6001be83c07", flowId: "5e962a23728ddc001b5937aa", metadata: metadataParams};
+
+    MatiCapacitor.showMatiFlow(registerParams)
+      .then( verification => console.log("verification success:" + verification.verificationId))
+      .catch(() => console.log("verification cancelled"))
   }
-
-  ionViewDidEnter() {
-    // methods handle of result
-    window.addEventListener('Verification success', (verificationId) => {
-      console.log("verification success:" + verificationId)
-    });
-
-    window.addEventListener('Verification cancelled', () => {
-      console.log("verification cancelled")
-    });
-  }
-
 }
-```
 
+```
 
 # Android
-### register the plugin in your Activity
-
-Please be sure to be sync with gradle files, press this button
-
-![alt text](https://github.com/GetMati/mati-capacitor-plugin/blob/main/sync_project.png)
-
-```java
-import io.mati.plugins.capacitor.MatiCapacitorPlugin;
-
-import java.util.ArrayList;
-
-public class MainActivity extends BridgeActivity {
-  @Override
-  public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-
-    // Initializes the Bridge
-    this.init(savedInstanceState, new ArrayList<Class<? extends Plugin>>() {{
-      // Additional plugins you've installed go here
-      // Ex: add(TotallyAwesomePlugin.class);
-      add(MatiCapacitorPlugin.class);
-    }});
-  }
-}
-```
 ### launch android
-    npx cap open android
+    ionic capacitor run android
 
 # iOS
-
 ### set minimum iOS version in capacitor.config.json
      "ios": {
       "minVersion": "11.4"
     }
     
 ### launch ios
-    npx cap open ios  
+    ionic capacitor run ios
     
 ## Still have question? Please ask us in issue tab on GitHub and use our "Examples" folder.
-
 
 #### Check additional info
 npm package https://www.npmjs.com/package/@aposnovmati/mati-capacitor-plugin
