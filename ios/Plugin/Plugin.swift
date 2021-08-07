@@ -12,7 +12,7 @@ public class MatiCapacitorPlugin: CAPPlugin {
     @objc func showMatiFlow(_ call: CAPPluginCall) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            MatiSDK.shared.showMatiFlow(clientId: call.getString("clientId") ?? "",
+            Mati.shared.showMatiFlow(clientId: call.getString("clientId") ?? "",
                                     flowId: call.getString("flowId") ?? "",
                                     metadata: call.getObject("metadata") ?? nil)
             MatiButtonResult.shared.delegate = self
