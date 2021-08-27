@@ -1,12 +1,12 @@
-# Mati Capacitor Plugin Usage Guide
+# Mati for Capacitor Usage Guide
 
 This is a tutorial to implement the Mati SDK in the [Ionic Capacitor framework](https://capacitorjs.com/docs).
 
-## Install the Mati Plugin
+## Install Mati for Capacitor
 
-The following instructions use command line tools to Install the Mati Capacitor plugin to your existing Capacitor application.
+The following instructions use command line tools to install Mati for Capacitor to your existing Capacitor application.
 
-1. Use the following CLI to install plugin into Capacitor project.
+1. Use the following CLI to install Mati for your Capacitor project.
 
     ```bash
     npm i @aposnovmati/mati-capacitor-plugin
