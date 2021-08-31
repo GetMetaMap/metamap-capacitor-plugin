@@ -1,3 +1,10 @@
+---
+title: "Capacitor"
+excerpt: "Add the Mati button to your Capacitor app."
+slug: "mobile-sdks"
+category: 61141a8437375100442f3d20
+---
+
 # Mati for Capacitor Usage Guide
 
 This is a tutorial to implement the Mati SDK in the [Ionic Capacitor framework](https://capacitorjs.com/docs).
