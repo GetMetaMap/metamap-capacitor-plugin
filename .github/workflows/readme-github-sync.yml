@@ -1,4 +1,4 @@
-name: Sync mati-capacitor-user-guide
+name: Sync mati-capacitor
 on:
   push:
     branches:
