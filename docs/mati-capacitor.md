@@ -7,7 +7,11 @@ category: 61141a8437375100442f3d20
 
 # Mati for Capacitor Usage Guide
 
-This is a tutorial to implement the Mati SDK in the [Ionic Capacitor framework](https://capacitorjs.com/docs).
+This is a guide to implement Mati in the [Ionic Capacitor framework](https://capacitorjs.com/docs).
+
+## Capacitor Demo App
+
+You can go to GitHub to download the [Mati Capacitor demo app](https://github.com/GetMati/mati-mobile-examples/tree/main/capacitorDemoApp).
 
 ## Install Mati for Capacitor
 
