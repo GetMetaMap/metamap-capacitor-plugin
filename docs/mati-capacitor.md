@@ -43,7 +43,7 @@ Add the Mati button to your application's HTML and JavaScript files.
 
  `your_index.ts`
 
-```javascript
+```typescript
 import { Component } from '@angular/core';
 
 import { MatiCapacitor } from "@aposnovmati/mati-capacitor-plugin";
