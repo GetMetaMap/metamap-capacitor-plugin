@@ -1,6 +1,6 @@
 {
   "name": "@aposnovmati/mati-capacitor-plugin",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Capacitor plugin for MatiSDK",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
@@ -17,9 +17,9 @@
   "author": "Andrey Posnov",
   "license": "MIT",
   "devDependencies": {
-    "@capacitor/android": "^3.0.0",
-    "@capacitor/core": "^3.0.0",
-    "@capacitor/ios": "^3.0.0",
+    "@capacitor/android": "^2.4.6",
+    "@capacitor/core": "^2.4.6",
+    "@capacitor/ios": "^2.4.6",
     "@ionic/prettier-config": "^1.0.0",
     "@ionic/swiftlint-config": "^1.0.0",
     "@rollup/plugin-node-resolve": "^8.1.0",
@@ -31,7 +31,7 @@
     "typescript": "~3.8.3"
   },
   "peerDependencies": {
-    "@capacitor/core": "^3.0.0"
+    "@capacitor/core": "^2.4.6"
   },
   "files": [
     "dist/",
