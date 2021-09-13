@@ -1,3 +1,4 @@
-# Mati Capacitor Plugin
-The Mati Capacitor plugin usage guide can be found in the following location:
-* [Mati Capacitor Plugin Usage Guide](mati-capacitor-plugin.md)
+# Mati for Capacitor
+
+The Mati for Capacitor usage guide can be found in the following location:
+* [Mati for Capacitor Usage Guide](docs/mati-capacitor.md)

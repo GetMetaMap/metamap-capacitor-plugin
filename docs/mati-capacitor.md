@@ -1,12 +1,23 @@
-# Mati Capacitor Plugin Usage Guide
+---
+title: "Capacitor"
+excerpt: "Add the Mati button to your Capacitor app."
+slug: "mobile-sdks"
+category: 61141a8437375100442f3d20
+---
 
-This is a tutorial to implement the Mati SDK in the [Ionic Capacitor framework](https://capacitorjs.com/docs).
+# Mati for Capacitor Usage Guide
 
-## Install the Mati Plugin
+This is a guide to implement Mati in the [Ionic Capacitor framework](https://capacitorjs.com/docs).
 
-The following instructions use command line tools to Install the Mati Capacitor plugin to your existing Capacitor application.
+## Capacitor Demo App
 
-1. Use the following CLI to install plugin into Capacitor project.
+You can go to GitHub to download the [Mati Capacitor demo app](https://github.com/GetMati/mati-mobile-examples/tree/main/capacitorDemoApp).
+
+## Install Mati for Capacitor
+
+The following instructions use command line tools to install Mati for Capacitor to your existing Capacitor application.
+
+1. Use the following CLI to install Mati for your Capacitor project.
 
     ```bash
     npm i @aposnovmati/mati-capacitor-plugin
@@ -36,7 +47,7 @@ Add the Mati button to your application's HTML and JavaScript files.
 
  `your_index.ts`
 
-```javascript
+```typescript
 import { Component } from '@angular/core';
 
 import { MatiCapacitor } from "@aposnovmati/mati-capacitor-plugin";
