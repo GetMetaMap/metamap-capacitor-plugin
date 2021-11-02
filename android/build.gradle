@@ -51,7 +51,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
-    implementation ('com.getmati:mati-sdk:3.11.1'){
+    implementation ('com.getmati:mati-sdk:3.11.2'){
         exclude group: 'org.json', module: 'json'
     }
 }
