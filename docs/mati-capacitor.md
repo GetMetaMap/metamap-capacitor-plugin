@@ -34,9 +34,8 @@ The following instructions use command line tools to install Mati for Capacitor 
     ```
     
 ## How to update Capacitor 3.x.x
-     ```bash
+
 npm install @capacitor/cli@latest @capacitor/core@latest @capacitor/ios@latest @capacitor/android@latest --force
-    ```
     
 ## How toAdd the Mati Button
 
