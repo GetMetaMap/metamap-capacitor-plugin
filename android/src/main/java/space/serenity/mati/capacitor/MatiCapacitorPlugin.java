@@ -33,6 +33,7 @@ public class MatiCapacitorPlugin extends Plugin {
                 final String clientId = call.getString("clientId");
                 final String flowId = call.getString("flowId");
                 final JSONObject metadata = call.getObject("metadata", null);
+                metadata.put("sdkType", "capacitor");
 
                 Intent intent = new Intent(bridge.getActivity(), DataPrefetchActivity.class);
 
