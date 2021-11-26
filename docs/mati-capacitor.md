@@ -86,7 +86,7 @@ To launch the application for iOS, you need to do the following:
 1. Set minimum iOS version in `capacitor.config.json`
     ```json
      "ios": {
-      "minVersion": "11.4"
+      "minVersion": "12.0"
     }
     ```
 
