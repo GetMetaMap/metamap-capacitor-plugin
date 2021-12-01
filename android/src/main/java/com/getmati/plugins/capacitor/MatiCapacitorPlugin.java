@@ -1,4 +1,4 @@
-package space.serenity.mati.capacitor;
+package com.getmati.plugins.capacitor;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,12 +12,12 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
-import com.getmati.mati_sdk.MatiButton;
 import com.getmati.mati_sdk.MatiSdk;
 import com.getmati.mati_sdk.Metadata;
 import com.getmati.mati_sdk.ui.data_prefetch.DataPrefetchActivity;
 
 import org.json.JSONObject;
+import org.json.JSONException;
 
 @CapacitorPlugin(name = "MatiCapacitor")
 public class MatiCapacitorPlugin extends Plugin {
@@ -32,22 +32,21 @@ public class MatiCapacitorPlugin extends Plugin {
 
                 final String clientId = call.getString("clientId");
                 final String flowId = call.getString("flowId");
-                final JSObject metadata = call.getObject("metadata", null);
-                metadata.put("sdkType", "capacitor");
+                final JSONObject metadata = call.getObject("metadata", new JSObject());
+                try {
+                    metadata.put("sdkType", "capacitor");
 
-                Intent intent = new Intent(bridge.getActivity(), DataPrefetchActivity.class);
+                    Intent intent = new Intent(bridge.getActivity(), DataPrefetchActivity.class);
 
-                intent.putExtra("ARG_CLIENT_ID", clientId);
-                if(flowId != null) {
-                    intent.putExtra("ARG_FLOW_ID", flowId);
+                    intent.putExtra("ARG_CLIENT_ID", clientId);
+                    if (flowId != null) {
+                        intent.putExtra("ARG_FLOW_ID", flowId);
+                    }
+                    intent.putExtra("ARG_METADATA", Metadata.fromJson(metadata.toString(2)));
+                    startActivityForResult(call, intent, "callback");
+                } catch(JSONException excepion) {
+                    call.reject("Verification failed");
                 }
-                if(metadata != null) {
-                    intent.putExtra("ARG_METADATA", metadata.toString());
-                }
-
-//                MatiSdk.INSTANCE.startFlow(bridge.getActivity(), clientId, flowId, Metadata.fromJson(metadata.toString()));
-
-                startActivityForResult(call, intent, "callback");
             }
         });
     }
