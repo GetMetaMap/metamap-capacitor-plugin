@@ -56,12 +56,12 @@
   "swiftlint": "@ionic/swiftlint-config",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MatiFace/MatiGlobalIDSDKCapacitorPlugin.git"
+    "url": "git+https://github.com/GetMati/mati-capacitor-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/MatiFace/MatiGlobalIDSDKCapacitorPlugin/issues"
+    "url": "https://github.com/GetMati/mati-capacitor-plugin/issues"
   },
-  "homepage": "https://github.com/MatiFace/MatiGlobalIDSDKCapacitorPlugin#readme",
+  "homepage": "https://github.com/GetMati/mati-capacitor-plugin/blob/main/docs/mati-capacitor.md",
   "dependencies": {
     "@capacitor/cli": "^3.3.2"
   }
