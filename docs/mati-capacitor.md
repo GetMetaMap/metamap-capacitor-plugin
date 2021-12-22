@@ -33,7 +33,7 @@ The following instructions use command line tools to install Mati for Capacitor 
     npx cap sync
     ```
     
-1. Use the following CLI to uninstall Mati from yours project.
+Use the following CLI to uninstall Mati from yours project.
 
     ```bash
     npm uninstall --save @aposnovmati/mati-capacitor-plugin
