@@ -102,6 +102,6 @@ To launch the application for iOS, you need to do the following:
  ## Uninstall Mati for Capacitor
 Use the following CLI to uninstall Mati from yours project.
 
-    ```bash
+    
     npm uninstall --save @aposnovmati/mati-capacitor-plugin
-    ```
+    
