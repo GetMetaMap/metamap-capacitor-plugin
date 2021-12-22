@@ -12,11 +12,11 @@ public class MatiCapacitorPlugin: CAPPlugin {
     @objc func showMatiFlow(_ call: CAPPluginCall) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            let metadata = call.getObject("metadata") ?? [:]
+            var metadata = call.getObject("metadata") ?? [:]
             metadata["sdk_type"] = "ios_capacitor"
             Mati.shared.showMatiFlow(clientId: call.getString("clientId") ?? "",
                                     flowId: call.getString("flowId") ?? "",
-                                    metadata: )
+                                    metadata: metadata)
             MatiButtonResult.shared.delegate = self
             call.success()
         }
@@ -24,13 +24,13 @@ public class MatiCapacitorPlugin: CAPPlugin {
 }
 
 extension MatiCapacitorPlugin: MatiButtonResultDelegate {
-    public func verificationSuccess(identityId: String) {
-        self.bridge.triggerWindowJSEvent(eventName:  "verificationSuccess:", data: identityId)
+    public func verificationSuccess(identityId: String?, verificationID: String?) {
+        self.bridge?.triggerWindowJSEvent(eventName:  "verificationSuccess:", data: identityId ?? "")
         debugPrint("verificationSuccess: \(identityId)")
     }
-    
+        
     public func verificationCancelled() {
-        self.bridge.triggerWindowJSEvent(eventName: "verificationCancelled")
+        self.bridge?.triggerWindowJSEvent(eventName: "verificationCancelled")
         debugPrint("verificationCancelled")
     }
 }
