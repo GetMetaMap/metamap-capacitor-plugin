@@ -33,12 +33,6 @@ The following instructions use command line tools to install Mati for Capacitor 
     npx cap sync
     ```
     
-Use the following CLI to uninstall Mati from yours project.
-
-    ```bash
-    npm uninstall --save @aposnovmati/mati-capacitor-plugin
-    ```
-    
 ## How to update Capacitor 3.x.x
 
 npm install @capacitor/cli@latest @capacitor/core@latest @capacitor/ios@latest @capacitor/android@latest --force
@@ -103,4 +97,11 @@ To launch the application for iOS, you need to do the following:
 1. Launch the application for iOS
     ```bash
     ionic capacitor run ios
+    ```
+    
+ ## Uninstall Mati for Capacitor
+Use the following CLI to uninstall Mati from yours project.
+
+    ```bash
+    npm uninstall --save @aposnovmati/mati-capacitor-plugin
     ```
