@@ -18,7 +18,7 @@ public class MatiCapacitorPlugin: CAPPlugin {
                                     flowId: call.getString("flowId") ?? "",
                                     metadata: metadata)
             MatiButtonResult.shared.delegate = self
-            call.success()
+            call.resolve()
         }
     }
 }
