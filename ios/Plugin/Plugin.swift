@@ -13,7 +13,7 @@ public class MatiCapacitorPlugin: CAPPlugin {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             var metadata = call.getObject("metadata") ?? [:]
-            metadata["sdk_type"] = "ios_capacitor"
+            metadata["sdk_type"] = "capacitor"
             Mati.shared.showMatiFlow(clientId: call.getString("clientId") ?? "",
                                     flowId: call.getString("flowId") ?? "",
                                     metadata: metadata)
