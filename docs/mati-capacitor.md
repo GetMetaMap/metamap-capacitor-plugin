@@ -1,7 +1,7 @@
 ---
 title: "Capacitor"
 excerpt: "Add the Mati button to your Capacitor app."
-slug: "mobile-sdks"
+slug: "capacitor-sdk"
 category: 61141a8437375100442f3d20
 hidden: true
 ---
