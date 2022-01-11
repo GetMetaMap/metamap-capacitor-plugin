@@ -3,9 +3,7 @@ package com.getmati.plugins.capacitor;
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
-
 import androidx.activity.result.ActivityResult;
-
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -14,8 +12,6 @@ import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
 import com.getmati.mati_sdk.MatiSdk;
 import com.getmati.mati_sdk.Metadata;
-import com.getmati.mati_sdk.ui.data_prefetch.DataPrefetchActivity;
-
 import org.json.JSONObject;
 import org.json.JSONException;
 
@@ -35,15 +31,11 @@ public class MatiCapacitorPlugin extends Plugin {
                 final JSONObject metadata = call.getObject("metadata", new JSObject());
                 try {
                     metadata.put("sdkType", "capacitor");
-
-                    Intent intent = new Intent(bridge.getActivity(), DataPrefetchActivity.class);
-
-                    intent.putExtra("ARG_CLIENT_ID", clientId);
-                    if (flowId != null) {
-                        intent.putExtra("ARG_FLOW_ID", flowId);
+                    if (clientId == null) {
+                      Log.e("MatiCapacitorPlugin", "\"Client Id should be not null\"");
+                    } else {
+                      MatiSdk.INSTANCE.startFlow(bridge.getActivity(), clientId, flowId, Metadata.fromJson(metadata.toString(2)));
                     }
-                    intent.putExtra("ARG_METADATA", Metadata.fromJson(metadata.toString(2)));
-                    startActivityForResult(call, intent, "callback");
                 } catch(JSONException excepion) {
                     call.reject("Verification failed");
                 }
