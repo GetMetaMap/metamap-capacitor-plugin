@@ -25,8 +25,11 @@ public class MatiCapacitorPlugin: CAPPlugin {
 
 extension MatiCapacitorPlugin: MatiButtonResultDelegate {
     public func verificationSuccess(identityId: String?, verificationID: String?) {
-        self.bridge?.triggerWindowJSEvent(eventName:  "verificationSuccess:", data: identityId ?? "")
-        debugPrint("verificationSuccess: \(identityId)")
+        self.bridge?.triggerWindowJSEvent(eventName:  "verificationSuccess", data: identityId ?? "")
+        debugPrint("verificationSuccessIdentityId : \(identityId)")
+        
+        self.bridge?.triggerWindowJSEvent(eventName:  "verificationSuccessVerificationID", data: verificationID ?? "")
+        debugPrint("verificationSuccessVerificationID: \(verificationID)")
     }
         
     public func verificationCancelled() {
