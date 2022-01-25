@@ -1,9 +1,8 @@
 ---
 title: "Capacitor"
-excerpt: "Add the Mati button to your Capacitor app."
+excerpt: "Add the MetaMap button to your Capacitor app."
 slug: "capacitor-sdk"
-category: 61141a8437375100442f3d20
-hidden: true
+category: 61ae8e8dba577a0010791480
 ---
 
 # Mati for Capacitor Usage Guide
