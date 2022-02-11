@@ -54,7 +54,10 @@ public class MatiCapacitorPlugin extends Plugin {
     public void callback(PluginCall call, ActivityResult activityResult) {
         if(activityResult.getResultCode() == Activity.RESULT_OK) {
             JSObject result = new JSObject();
-            result.put("verificationSuccess", activityResult.getData().getStringExtra(MatiSdk.ARG_VERIFICATION_ID));
+            val identityId = activityResult.getData().getStringExtra(MatiSdk.ARG_IDENTITY_ID);
+            val verificationID = activityResult.getData().getStringExtra(MatiSdk.ARG_VERIFICATION_ID);
+            result.put("identityId", identityId);
+            result.put("verificationID", verificationID);
             call.resolve(result);
             Log.e("MatiCapacitorPlugin", "Activity.RESULT_OK");
         } else {

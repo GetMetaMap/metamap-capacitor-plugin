@@ -7,10 +7,10 @@ import type { MatiParams } from './definitions';
 const MatiCapacitorUnwrapped = registerPlugin<MatiCapacitorPlugin>('MatiCapacitor', {});
 
 const MatiCapacitor = {
-    aaa: function(options: MatiParams) {
+    showMati: function(options: MatiParams):Promise<{ identityId: string, verificationID: string }> {
         const { metadata } = options
-        MatiCapacitorUnwrapped.showMatiFlow({...options, metadata: {...metadata, sdkType: "capacitor" }})
-    }
+        return MatiCapacitorUnwrapped.showMatiFlow({...options, metadata: {...metadata, sdkType: "capacitor" }})
+    },
 }
 
 export * from './definitions';

@@ -4,7 +4,7 @@ export interface MatiParams {
   metadata?: object
 }
 export interface MatiCapacitorPlugin {
-  showMatiFlow(options: MatiParams): Promise<{ verificationId: string }>;
+  showMatiFlow(options: MatiParams): Promise<{ identityId: string, verificationID: string }>;
 }
 
   
