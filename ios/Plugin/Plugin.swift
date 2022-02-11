@@ -8,7 +8,8 @@ import MatiSDK
  */
 @objc(MatiCapacitorPlugin)
 public class MatiCapacitorPlugin: CAPPlugin {
-    
+
+    var output:  CAPPluginCall?
     @objc func showMatiFlow(_ call: CAPPluginCall) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
@@ -18,22 +19,20 @@ public class MatiCapacitorPlugin: CAPPlugin {
                                     flowId: call.getString("flowId") ?? "",
                                     metadata: metadata)
             MatiButtonResult.shared.delegate = self
-            call.resolve()
+           self.output = call
         }
     }
 }
 
 extension MatiCapacitorPlugin: MatiButtonResultDelegate {
     public func verificationSuccess(identityId: String?, verificationID: String?) {
-        self.bridge?.triggerWindowJSEvent(eventName:  "verificationSuccess", data: identityId ?? "")
         debugPrint("verificationSuccessIdentityId : \(identityId)")
-        
-        self.bridge?.triggerWindowJSEvent(eventName:  "verificationSuccessVerificationID", data: verificationID ?? "")
+        output?.resolve(["identityId": identityId, "verificationID": verificationID])
         debugPrint("verificationSuccessVerificationID: \(verificationID)")
     }
         
     public func verificationCancelled() {
-        self.bridge?.triggerWindowJSEvent(eventName: "verificationCancelled")
         debugPrint("verificationCancelled")
+        output?.reject("verificationCancelled")
     }
 }
