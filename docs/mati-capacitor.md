@@ -20,7 +20,7 @@ The following instructions use command line tools to install Mati for Capacitor 
 1. Use the following CLI to install Mati for your Capacitor project.
 
     ```bash
-    npm i @aposnovmati/mati-capacitor-plugin
+    npm i @avo121/mati-capacitor-plugin
     ```
 
 1. Build your application.
@@ -102,5 +102,5 @@ To launch the application for iOS, you need to do the following:
 Use the following CLI to uninstall Mati from yours project.
 
     
-    npm uninstall --save @aposnovmati/mati-capacitor-plugin
+    npm uninstall --save npm i @avo121/mati-capacitor-plugin
     
