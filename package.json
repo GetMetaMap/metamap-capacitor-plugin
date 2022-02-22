@@ -1,6 +1,6 @@
 {
   "name": "@avo121/mati-capacitor-plugin",
-  "version": "2.6.1",
+  "version": "2.7.3",
   "description": "Capacitor plugin for MatiSDK",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
