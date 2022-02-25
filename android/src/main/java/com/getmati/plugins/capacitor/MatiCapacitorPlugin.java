@@ -10,18 +10,18 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
-import com.getmati.mati_sdk.MatiSdk;
-import com.getmati.mati_sdk.Metadata;
+import com.metamap.metamap_sdk.MetamapSdk
+import com.metamap.metamap_sdk.Metadata
 import org.json.JSONObject;
 import org.json.JSONException;
 
-@CapacitorPlugin(name = "MatiCapacitor")
-public class MatiCapacitorPlugin extends Plugin {
+@CapacitorPlugin(name = "MetaMapCapacitor")
+public class MetaMapCapacitorPlugin extends Plugin {
 
     @SuppressWarnings("unused")
     @PluginMethod
-    public void showMatiFlow(PluginCall call) {
-        Log.e("MatiCapacitorPlugin", "showMatiFlow");
+    public void showMetaMapFlow(PluginCall call) {
+        Log.e("MetaMapCapacitorPlugin", "showMetaMapFlow");
         bridge.getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -32,9 +32,9 @@ public class MatiCapacitorPlugin extends Plugin {
                 try {
                     metadata.put("sdkType", "capacitor");
                     if (clientId == null) {
-                      Log.e("MatiCapacitorPlugin", "\"Client Id should be not null\"");
+                      Log.e("MetaMapCapacitorPlugin", "\"Client Id should be not null\"");
                     } else {
-                      MatiSdk.INSTANCE.startFlow(bridge.getActivity(), clientId, flowId, Metadata.fromJson(metadata.toString(2)));
+                        MetamapSdk.INSTANCE.startFlow(bridge.getActivity(), clientId, flowId, Metadata.fromJson(metadata.toString(2)));
                     }
                 } catch(JSONException excepion) {
                     call.reject("Verification failed");
@@ -46,7 +46,7 @@ public class MatiCapacitorPlugin extends Plugin {
     @Override
     protected void handleOnActivityResult(int requestCode, int resultCode, Intent data) {
         super.handleOnActivityResult(requestCode, resultCode, data);
-        Log.e("MatiCapacitorPlugin", "WILL NOT BE CALLED");
+        Log.e("MetaMapCapacitorPlugin", "WILL NOT BE CALLED");
     }
 
     @SuppressWarnings("unused")
@@ -59,10 +59,10 @@ public class MatiCapacitorPlugin extends Plugin {
             result.put("identityId", identityId);
             result.put("verificationID", verificationID);
             call.resolve(result);
-            Log.e("MatiCapacitorPlugin", "Activity.RESULT_OK");
+            Log.e("MetaMapCapacitorPlugin", "Activity.RESULT_OK");
         } else {
             call.reject("verificationCancelled");
-            Log.e("MatiCapacitorPlugin", "Activity.RESULT_CANCELLED");
+            Log.e("MetaMapCapacitorPlugin", "Activity.RESULT_CANCELLED");
         }
     }
 }

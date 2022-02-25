@@ -5,19 +5,19 @@ slug: "capacitor-sdk"
 category: 61ae8e8dba577a0010791480
 ---
 
-# Mati for Capacitor Usage Guide
+# MetaMap for Capacitor Usage Guide
 
-This is a guide to implement Mati in the [Ionic Capacitor framework](https://capacitorjs.com/docs).
+This is a guide to implement MetaMap in the [Ionic Capacitor framework](https://capacitorjs.com/docs).
 
 ## Capacitor Demo App
 
-You can go to GitHub to download the [Mati Capacitor demo app](https://github.com/GetMati/mati-mobile-examples/tree/main/capacitorDemoApp).
+You can go to GitHub to download the [MetaMap Capacitor demo app](https://github.com/GetMati/mati-mobile-examples/tree/main/capacitorDemoApp).
 
-## Install Mati for Capacitor
+## Install MetaMap for Capacitor
 
-The following instructions use command line tools to install Mati for Capacitor to your existing Capacitor application.
+The following instructions use command line tools to install MetaMap for Capacitor to your existing Capacitor application.
 
-1. Use the following CLI to install Mati for your Capacitor project.
+1. Use the following CLI to install MetaMap for your Capacitor project.
 
     ```bash
     npm i @avo121/mati-capacitor-plugin
@@ -36,15 +36,15 @@ The following instructions use command line tools to install Mati for Capacitor 
 
 npm install @capacitor/cli@latest @capacitor/core@latest @capacitor/ios@latest @capacitor/android@latest --force
     
-## How toAdd the Mati Button
+## How toAdd the MetaMap Button
 
-Add the Mati button to your application's HTML and JavaScript files.
+Add the MetaMap button to your application's HTML and JavaScript files.
 
 `your_index.html`
 
 ```html
     <ion-content>
-    <ion-button className="matiButtonCss" (click)="showMatiFlow()">Show MatiFlow
+    <ion-button className="metaMapButtonCss" (click)="showMetaMapFlow()">Show MetaMapFlow
     </ion-button>
     </ion-content>
 ```
@@ -54,7 +54,7 @@ Add the Mati button to your application's HTML and JavaScript files.
 ```typescript
 import { Component } from '@angular/core';
 
-import { MatiCapacitor } from "@aposnovmati/mati-capacitor-plugin";
+import { MetaMapCapacitor } from "@avo121/mati-capacitor-plugin";
 
 @Component({
   selector: 'app-home',
@@ -64,11 +64,11 @@ import { MatiCapacitor } from "@aposnovmati/mati-capacitor-plugin";
 export class HomePage {
   constructor() {}
 
-  showMatiFlow() {
+  showMetaMapFlow() {
     let metadataParams = { param1: "value1" };
     let registerParams = { clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: metadataParams};
 
-    MatiCapacitor.showMatiFlow(registerParams)
+    MetaMapCapacitor.showMetaMapFlow(registerParams)
       .then( verification => console.log("verification success:" + verification.verificationId))
       .catch(() => console.log("verification cancelled"))
   }
@@ -98,8 +98,8 @@ To launch the application for iOS, you need to do the following:
     ionic capacitor run ios
     ```
     
- ## Uninstall Mati for Capacitor
-Use the following CLI to uninstall Mati from yours project.
+ ## Uninstall MetaMap for Capacitor
+Use the following CLI to uninstall MetaMap from yours project.
 
     
     npm uninstall --save npm i @avo121/mati-capacitor-plugin

@@ -6,11 +6,11 @@ import MatiSDK
  * Please read the Capacitor iOS Plugin Development Guide
  * here: https://capacitorjs.com/docs/plugins/ios
  */
-@objc(MatiCapacitorPlugin)
-public class MatiCapacitorPlugin: CAPPlugin {
+@objc(MetaMapCapacitorPlugin)
+public class MetaMapCapacitorPlugin: CAPPlugin {
 
     var output:  CAPPluginCall?
-    @objc func showMatiFlow(_ call: CAPPluginCall) {
+    @objc func showMetaMapFlow(_ call: CAPPluginCall) {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             var metadata = call.getObject("metadata") ?? [:]
@@ -24,7 +24,7 @@ public class MatiCapacitorPlugin: CAPPlugin {
     }
 }
 
-extension MatiCapacitorPlugin: MatiButtonResultDelegate {
+extension MetaMapCapacitorPlugin: MatiButtonResultDelegate {
     public func verificationSuccess(identityId: String?, verificationID: String?) {
         debugPrint("verificationSuccessIdentityId : \(identityId)")
         output?.resolve(["identityId": identityId, "verificationID": verificationID])

@@ -1,10 +1,10 @@
-export interface MatiParams {
+export interface MetaMapParams {
   clientId: string
   flowId: string
   metadata?: object
 }
-export interface MatiCapacitorPlugin {
-  showMatiFlow(options: MatiParams): Promise<{ identityId: string, verificationID: string }>;
+export interface MetaMapCapacitorPlugin {
+  showMetaMapFlow(options: MetaMapParams): Promise<{ identityId: string, verificationID: string }>;
 }
 
   

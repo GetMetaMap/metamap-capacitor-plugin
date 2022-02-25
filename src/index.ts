@@ -1,18 +1,18 @@
 import { registerPlugin } from '@capacitor/core';
 
 
-import type { MatiCapacitorPlugin } from './definitions';
-import type { MatiParams } from './definitions';
+import type { MetaMapCapacitorPlugin } from './definitions';
+import type { MetaMapParams } from './definitions';
 
-const MatiCapacitorUnwrapped = registerPlugin<MatiCapacitorPlugin>('MatiCapacitor', {});
+const MetaMapCapacitorUnwrapped = registerPlugin<MetaMapCapacitorPlugin>('MetaMapCapacitor', {});
 
-const MatiCapacitor = {
-    showMati: function(options: MatiParams):Promise<{ identityId: string, verificationID: string }> {
+const MetaMapCapacitor = {
+    showMetaMapFlow: function(options: MetaMapParams):Promise<{ identityId: string, verificationID: string }> {
         const { metadata } = options
-        return MatiCapacitorUnwrapped.showMatiFlow({...options, metadata: {...metadata, sdkType: "capacitor" }})
+        return MetaMapCapacitorUnwrapped.showMetaMapFlow({...options, metadata: {...metadata, sdkType: "capacitor" }})
     },
 }
 
 export * from './definitions';
-export { MatiCapacitor };
+export { MetaMapCapacitor };
   
