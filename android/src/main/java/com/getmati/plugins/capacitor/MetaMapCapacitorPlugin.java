@@ -10,8 +10,8 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.ActivityCallback;
 import com.getcapacitor.annotation.CapacitorPlugin;
-import com.metamap.metamap_sdk.MetamapSdk
-import com.metamap.metamap_sdk.Metadata
+import com.metamap.metamap_sdk.MetamapSdk;
+import com.metamap.metamap_sdk.Metadata;
 import org.json.JSONObject;
 import org.json.JSONException;
 
@@ -52,7 +52,7 @@ public class MetaMapCapacitorPlugin extends Plugin {
     @SuppressWarnings("unused")
     @ActivityCallback
     public void callback(PluginCall call, ActivityResult activityResult) {
-        if(activityResult.getResultCode() == Activity.RESULT_OK) {
+        if(activityResult.getResultCode() == Activity.RESULT_OK && activityResult.getData() != null) {
             JSObject result = new JSObject();
             String identityId = activityResult.getData().getStringExtra("ARG_IDENTITY_ID");
             String verificationID = activityResult.getData().getStringExtra("ARG_VERIFICATION_ID");

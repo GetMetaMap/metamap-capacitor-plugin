@@ -1,7 +1,7 @@
 {
   "name": "@avo121/mati-capacitor-plugin",
-  "version": "2.8.2",
-  "description": "Capacitor plugin for MatiSDK",
+  "version": "3.0.0",
+  "description": "Capacitor plugin for MetaMapSDK",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -42,7 +42,7 @@
     "dist/",
     "ios/",
     "android/",
-    "Avo121MetaMapCapacitorPlugin.podspec"
+    "Avo121MatiCapacitorPlugin.podspec"
   ],
   "keywords": [
     "capacitor",
@@ -61,12 +61,12 @@
   "swiftlint": "@ionic/swiftlint-config",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GetMati/mati-capacitor-plugin.git"
+    "url": "git+https://github.com/GetMetaMap/mati-capacitor-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/GetMati/mati-capacitor-plugin/issues"
+    "url": "https://github.com/GetMetaMap/mati-capacitor-plugin/issues"
   },
-  "homepage": "https://github.com/GetMati/mati-capacitor-plugin/blob/main/docs/mati-capacitor.md",
+  "homepage": "https://github.com/GetMetaMap/mati-capacitor-plugin/blob/main/docs/mati-capacitor.md",
   "dependencies": {
     "@capacitor/cli": "^3.3.2"
   }
