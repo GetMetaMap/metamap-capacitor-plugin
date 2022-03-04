@@ -1,6 +1,6 @@
 {
   "name": "@avo121/mati-capacitor-plugin",
-  "version": "3.0.0",
+  "version": "3.0.7",
   "description": "Capacitor plugin for MetaMapSDK",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
@@ -14,11 +14,9 @@
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build"
   },
-
   "publishConfig": {
     "access": "public"
   },
-
   "author": "Andrey Posnov",
   "license": "MIT",
   "devDependencies": {
@@ -68,6 +66,7 @@
   },
   "homepage": "https://github.com/GetMetaMap/mati-capacitor-plugin/blob/main/docs/mati-capacitor.md",
   "dependencies": {
+    "@avo121/mati-capacitor-plugin": "^3.0.1",
     "@capacitor/cli": "^3.3.2"
   }
 }

@@ -34,7 +34,8 @@ public class MetaMapCapacitorPlugin extends Plugin {
                     if (clientId == null) {
                       Log.e("MetaMapCapacitorPlugin", "\"Client Id should be not null\"");
                     } else {
-                        MetamapSdk.INSTANCE.startFlow(bridge.getActivity(), clientId, flowId, Metadata.fromJson(metadata.toString(2)));
+                        Intent flowIntent = MetamapSdk.INSTANCE.createFlowIntent(bridge.getActivity(), clientId, flowId, Metadata.fromJson(metadata.toString(2)));
+                        startActivityForResult(call, flowIntent, "callback");
                     }
                 } catch(JSONException excepion) {
                     call.reject("Verification failed");
