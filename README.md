@@ -1,5 +1,5 @@
-# Mati for Capacitor
+# MetaMap for Capacitor
 
-The Mati for Capacitor usage guide can be found in the following location:
-* [Mati for Capacitor Usage Guide](docs/mati-capacitor.md)
+The MetaMap for Capacitor usage guide can be found in the following location:
+* [MetaMap for Capacitor Usage Guide](docs/metaMap-capacitor.md)
 

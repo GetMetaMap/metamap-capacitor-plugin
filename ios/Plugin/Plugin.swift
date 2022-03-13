@@ -1,6 +1,6 @@
 import Foundation
 import Capacitor
-import MatiSDK
+import MetaMapSDK
 
 /**
  * Please read the Capacitor iOS Plugin Development Guide
@@ -15,16 +15,16 @@ public class MetaMapCapacitorPlugin: CAPPlugin {
             guard let self = self else { return }
             var metadata = call.getObject("metadata") ?? [:]
             metadata["sdk_type"] = "capacitor"
-            Mati.shared.showMatiFlow(clientId: call.getString("clientId") ?? "",
+            MetaMap.shared.showMetaMapFlow(clientId: call.getString("clientId") ?? "",
                                     flowId: call.getString("flowId") ?? "",
                                     metadata: metadata)
-            MatiButtonResult.shared.delegate = self
+            MetaMapButtonResult.shared.delegate = self
            self.output = call
         }
     }
 }
 
-extension MetaMapCapacitorPlugin: MatiButtonResultDelegate {
+extension MetaMapCapacitorPlugin: MetaMapButtonResultDelegate {
     public func verificationSuccess(identityId: String?, verificationID: String?) {
         debugPrint("verificationSuccessIdentityId : \(identityId)")
         output?.resolve(["identityId": identityId, "verificationID": verificationID])
