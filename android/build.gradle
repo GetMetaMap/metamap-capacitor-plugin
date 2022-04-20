@@ -51,7 +51,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
-    implementation ('com.metamap:android-sdk:3.19.1'){
+    implementation ('com.metamap:android-sdk:3.21.1'){
         exclude group: 'org.json', module: 'json'
     }
 }
