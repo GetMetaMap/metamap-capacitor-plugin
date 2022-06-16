@@ -1,6 +1,6 @@
 {
   "name": "@avo121/mati-capacitor-plugin",
-  "version": "3.1.4",
+  "version": "3.1.6",
   "description": "Capacitor plugin for MetaMapSDK",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
