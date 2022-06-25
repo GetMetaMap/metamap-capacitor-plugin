@@ -1,19 +1,26 @@
+---
+title: "Capacitor"
+excerpt: "Add the MetaMap button to your Capacitor app."
+slug: "capacitor-sdk"
+category: 61ae8e8dba577a0010791480
+---
+
 # MetaMap for Capacitor Usage Guide
 
 The following instructions use command line tools to install MetaMap for Capacitor to your existing Capacitor application.
 
 1. Use the following CLI to install MetaMap for your Capacitor project.
 ```bash
-    npm i @avo121/mati-capacitor-plugin
+npm i @avo121/mati-capacitor-plugin
   ```
 
 2. Build your application.
 ```bash
-    ionic build
+ionic build
   ```
 3. Update the Capacitor files.
 ```bash
-    npx cap sync
+npx cap sync
   ```
 
 4. Add the MetaMap button to your application's HTML and JavaScript files.
@@ -21,10 +28,10 @@ The following instructions use command line tools to install MetaMap for Capacit
 `your_index.html`
 
 ```html
-    <ion-content>
+<ion-content>
     <ion-button className="metaMapButtonCss" (click)="showMetaMapFlow()">Show MetaMapFlow
     </ion-button>
-    </ion-content>
+</ion-content>
 ```
 
 `your_index.ts`
@@ -64,9 +71,9 @@ ionic capacitor run android
 
 1. Set minimum iOS version in `capacitor.config.json`
  ```bash
-     "ios": {
-      "minVersion": "12.0"
-    }
+"ios": {
+  "minVersion": "12.0"
+  }
 ```
 
 2. Add the following to info.plist:
@@ -92,5 +99,34 @@ ionic capacitor run android
 
 3. Launch the application for iOS
 ```bash
-    ionic capacitor run ios
+ionic capacitor run ios
+```
+
+3. Launch the application for android
+```bash
+ionic capacitor run android
+```
+
+4. ## Metadata is an additional optional parameters:
+
+4.1. Set the Language:
+
+```bash
+metadata: {"fixedLanguage": "es"}
+```
+4.2. Set the Button Color:
+
+```bash
+metadata: {"buttonColor": "hexColor"}
+   ```
+
+4.3. Set the Title color of the button:
+
+```bash
+metadata: {"buttonTextColor": "hexColor"}
+   ```
+
+4.4. Set identity Id as parameter for re-verification:
+```bash
+metadata: {"identityId": "value"}
    ```
