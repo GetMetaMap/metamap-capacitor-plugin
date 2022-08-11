@@ -11,7 +11,7 @@ The following instructions use command line tools to install MetaMap for Capacit
 
 1. Use the following CLI to install MetaMap for your Capacitor project.
 ```bash
-npm i @avo121/mati-capacitor-plugin
+npm i metamap-capacitor-plugin
   ```
 
 2. Build your application.
@@ -39,7 +39,7 @@ npx cap sync
 ```bash
 import { Component } from '@angular/core';
 
-import { MetaMapCapacitor } from "@avo121/mati-capacitor-plugin";
+import { MetaMapCapacitor } from "metamap-capacitor-plugin";
 
 @Component({
   selector: 'app-home',
