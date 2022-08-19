@@ -50,7 +50,7 @@ Add the Metamap button to your application's HTML and JavaScript files.
 ```json
 import { Component } from '@angular/core';
 
-import { MatiCapacitor } from "@aposnovmati/mati-capacitor-plugin";
+import { MetaMapCapacitor } from "metamap-capacitor-plugin";
 
 @Component({
   selector: 'app-home',
