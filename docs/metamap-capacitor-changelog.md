@@ -6,30 +6,43 @@ category: 61ae8e8dba577a0010791480
 hidden: true
 ---
 
-# Feedback
 
-If you have an issue or ideas to improve MetaMap's Capacitor plugin, please look at our [issues](https://github.com/GetMetaMap/mati-capacitor-plugin/issues) page to see if your issue has been reported or to add your own.
+# Version 3.3.0
+###### 17.09.2022
 
-<!-- Note to developers: copy/paste the template below for each version. Delete categories that don't apply the the release
+####  New Features
+* added 402/403 Error codes information
 
-# Version
-###### Date
+####  Android updates
+* Android SDK updated to 3.22.6
+  https://docs.getmati.com/docs/android-changelog#version-3226
   
-#### New Features
-* <new feature>
 
-#### Updated Features
-* <changes in existing functionality>
 
-#### Deprecated Features
-* <soon-to-be removed features>
+# Version 3.2.0
+###### 11.09.2022
 
-#### Removed Features
-* <removed features>
+####  New Features
+* updated documentation
 
-#### Bug Fixes
-* <bug fixes>
 
-#### Security Vulnerabilities
-* <known vulnerabilities>
--->
+
+# Version 3.1.9
+###### 22.08.2022
+
+####  Android updates
+* Android SDK updated to 3.22.4
+  https://docs.getmati.com/docs/android-changelog#version-3223
+
+####  iOS updates
+* iOS SDK updated to 3.9.11
+    https://docs.getmati.com/docs/ios-changelog#version-3911
+  
+
+
+# Version 3.1.8
+###### 30.07.2022
+
+####  Android updates
+* Android SDK updated to 3.22.3
+  https://docs.getmati.com/docs/android-changelog#version-3223
