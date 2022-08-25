@@ -11,18 +11,18 @@ hidden: true
 ###### 17.09.2022
 
 ####  New Features
-* added 402/403 Error codes information
+* document updated:  402/403 Error codes information
 
-####  Android updates
-* Android SDK updated to 3.22.6
-  https://docs.getmati.com/docs/android-changelog#version-3226
+####  Updated Features
+* Android SDK updated to [3.22.6](https://docs.getmati.com/docs/android-changelog#version-3226)
+  
   
 
 
 # Version 3.2.0
 ###### 11.09.2022
 
-####  New Features
+####  Updated Features
 * updated documentation
 
 
@@ -30,19 +30,18 @@ hidden: true
 # Version 3.1.9
 ###### 22.08.2022
 
-####  Android updates
-* Android SDK updated to 3.22.4
-  https://docs.getmati.com/docs/android-changelog#version-3223
-
-####  iOS updates
-* iOS SDK updated to 3.9.11
-    https://docs.getmati.com/docs/ios-changelog#version-3911
+####  Updated Features
+* Android SDK updated to [3.22.4](https://docs.getmati.com/docs/android-changelog#version-3223)
+  
+  
+* iOS SDK updated to [3.9.11](https://docs.getmati.com/docs/ios-changelog#version-3911)
+    
   
 
 
 # Version 3.1.8
 ###### 30.07.2022
 
-####  Android updates
-* Android SDK updated to 3.22.3
-  https://docs.getmati.com/docs/android-changelog#version-3223
+####  Updated Features
+* Android SDK updated to [3.22.3](https://docs.getmati.com/docs/android-changelog#version-3223)
+  
