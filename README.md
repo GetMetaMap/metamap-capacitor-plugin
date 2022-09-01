@@ -19,7 +19,7 @@ The following instructions use command line tools to install Metamap for Capacit
 
 1. Use the following CLI to install Metamap for your Capacitor project.
 ```bash
-npm i metamap-capacitor-plugin
+npm i metamap-capacitor-plugin@3.5.0
  ```
 
 1. Build your application.
