@@ -51,5 +51,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
-    implementation ('com.metamap:android-sdk:3.22.6')
+    implementation ('com.metamap:android-sdk:3.23.0')
 }
