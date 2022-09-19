@@ -1,8 +1,6 @@
 ---
-title: "Capacitor"
-excerpt: "Add the Metamap button to your Capacitor app."
-slug: "mobile-sdks"
-category: 61141a8437375100442f3d20
+LTS version (Recommended for most users): "3.6.0"
+Current Version(Latest features): "3.6.1"
 ---
 
 # Metamap for Capacitor Usage Guide
