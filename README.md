@@ -1,6 +1,6 @@
 ---
 LTS version (Recommended for most users): "3.6.0"
-Current Version(Latest features): "3.6.1"
+Current Version(Latest features): "3.7.0"
 ---
 
 # Metamap for Capacitor Usage Guide
