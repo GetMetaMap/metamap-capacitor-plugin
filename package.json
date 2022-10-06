@@ -1,6 +1,6 @@
 {
   "name": "metamap-capacitor-plugin",
-  "version": "3.7.0",
+  "version": "3.7.1",
   "description": "Capacitor plugin for MetaMapSDK",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
@@ -17,7 +17,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "Andrey Posnov",
+  "author": "Avo Sukiasyan",
   "license": "MIT",
   "devDependencies": {
     "@capacitor/android": "^3.3.2",
