@@ -1,7 +1,15 @@
 ---
-LTS version (Recommended for most users): "3.6.0"
-Current Version(Latest features): "3.7.1"
+title: "Capacitor"
+excerpt: "Add the MetaMap button to your Capacitor app."
+slug: "capacitor-sdk"
+category: 61ae8e8dba577a0010791480
 ---
+
+
+| LTS version (Recommended for most users): | Current Version(Latest features) |
+|-------------------------------------------|----------------------------------|
+| 3.6.0                                     | 3.7.2                            |
+
 
 # Metamap for Capacitor Usage Guide
 

@@ -5,124 +5,144 @@ slug: "capacitor-sdk"
 category: 61ae8e8dba577a0010791480
 ---
 
-# MetaMap for Capacitor Usage Guide
 
-The following instructions use command line tools to install MetaMap for Capacitor to your existing Capacitor application.
+| LTS version (Recommended for most users): | Current Version(Latest features) |
+|-------------------------------------------|----------------------------------|
+| 3.6.0                                     | 3.7.2                            |
 
-1. Use the following CLI to install MetaMap for your Capacitor project.
-   ```bash
-   npm i metamap-capacitor-plugin
-   ```
 
-2. Build your application.
-   ```bash
-   ionic build
-   ```
-3. Update the Capacitor files.
-   ```bash
-   npx cap sync
-   ```
+# Metamap for Capacitor Usage Guide
 
-4. Add the MetaMap button to your application's HTML and JavaScript files.
+This is a guide to implement Metamap in the [Ionic Capacitor framework](https://capacitorjs.com/docs).
 
-   `<your_index>.html`
- 
-   ```html
-   <ion-content>
-     <ion-button className="metaMapButtonCss" (click)="showMetaMapFlow()">Show MetaMapFlow
-     </ion-button>
-   </ion-content>
-   ```
+## Capacitor Demo App
 
-   `<your_index>.ts`
+You can go to GitHub to download the [Metamap Capacitor demo app](https://github.com/GetMati/mati-mobile-examples/tree/main/capacitorDemoApp).
 
-   ```javascript
-   import { Component } from '@angular/core';
+## Install Metamap for Capacitor
 
-   import { MetaMapCapacitor } from "@avo121/mati-capacitor-plugin";
+The following instructions use command line tools to install Metamap for Capacitor to your existing Capacitor application.
 
-   @Component({
-     selector: 'app-home',
-     templateUrl: 'home.page.html',
-     styleUrls: ['home.page.scss'],
-   })
-   export class HomePage {
-     constructor() {}
+1. Use the following CLI to install Metamap for your Capacitor project.
+```bash
+npm i metamap-capacitor-plugin@3.6.0
+ ```
 
-     showMetaMapFlow() {
-       let metadataParams = { param1: "value1" };
-       let registerParams = { clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: metadataParams};
+1. Build your application.
+```bash
+ionic build
+ ```
 
-       MetaMapCapacitor.showMetaMapFlow(registerParams)
-         .then( verification => console.log("verification success:" + verification.verificationId))
-         .catch(() => console.log("verification cancelled"))
-     }
-   }
-   ```
+1. Update the Capacitor files.
+```bash
+npx cap sync
+```
+
+## Add the Metamap Button
+
+Add the Metamap button to your application's HTML and JavaScript files.
+
+`your_index.html`
+
+```html
+<ion-content>
+   <ion-button className="matiButtonCss" (click)="showMatiFlow()">Show MatiFlow
+   </ion-button>
+</ion-content>
+```
+
+`your_index.ts`
+
+```json
+import { Component } from '@angular/core';
+
+import { MetaMapCapacitor } from "metamap-capacitor-plugin";
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+})
+export class HomePage {
+  constructor() {}
+
+  showMatiFlow() {
+    let metadataParams = { param1: "value1" };
+    let registerParams = { clientId: "5c94e3c401ddc6001be83c07", flowId: "5e962a23728ddc001b5937aa", metadata: metadataParams};
+
+    MatiCapacitor.showMatiFlow(registerParams)
+      .then( verification => console.log("verification success:" + verification.verificationId))
+      .catch(() => console.log("verification cancelled"))
+  }
+}
+```
 
 ## Launch for Android
 
-Run the following command to launch the application for Android:
 ```bash
 ionic capacitor run android
 ```
 
-## Launch for iOS
-
+# Launch for iOS
 
 1. Set minimum iOS version in `capacitor.config.json`
-   ```json
-   "ios": {
-     "minVersion": "12.0"
-   }
+```json
+     "ios": {
+      "minVersion": "12.0"
+    }
+```
+
+1. Add the following to info.plist:
+```bash
+    <key>NSCameraUsageDescription</key>
+    <string>MetaMap verification SDK requires camera use</string>
+
+    <key>NSMicrophoneUsageDescription</key>
+    <string>MetaMap verification SDK requires microphone use</string>
+
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>MetaMap verification SDK requires access to media library</string>
+
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>MetaMap will use your location information to provide best possible verification experience.</string>
+
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>MetaMap will use your location information to provide best possible verification experience.</string>
+
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>MetaMap will use your location information to provide best possible verification experience.</string>
+  ```
+
+1. Launch the application for iOS
+```bash
+ionic capacitor run ios
+  ```
+
+## Metadata is an additional optional parameters:
+
+1. Set the Language:
+```bash
+metadata: {"fixedLanguage": "es"}
+```
+
+1.  Set the Button Color:
+```bash
+metadata: {"buttonColor": "hexColor"}
+```
+
+1. Set the Title color of the button:
+```bash
+metadata: {"buttonTextColor": "hexColor"}
    ```
 
-2. Add the following to `info.plist`:
-   ```xml
-   <key>NSCameraUsageDescription</key>
-   <string>MetaMap verification SDK requires camera use</string>
+1. Set identity Id as parameter for re-verification:
+```bash
+metadata: {"identityId": "value"}
+```
 
-   <key>NSMicrophoneUsageDescription</key>
-   <string>MetaMap verification SDK requires microphone use</string>
 
-   <key>NSPhotoLibraryUsageDescription</key>
-   <string>MetaMap verification SDK requires access to media library</string>
+## Some error codes you may get during integration
 
-   <key>NSLocationWhenInUseUsageDescription</key>
-   <string>MetaMap will use your location information to provide best possible verification experience.</string>
+`402` - MetaMap services are not paid: please contact your customer success manager
 
-   <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-   <string>MetaMap will use your location information to provide best possible verification experience.</string>
-
-   <key>NSLocationAlwaysUsageDescription</key>
-   <string>MetaMap will use your location information to provide best possible verification experience.</string>
-   ```
-
-3. Launch the application for iOS
-   ```bash
-   ionic capacitor run ios
-   ```
-
-3. Launch the application for android
-   ```bash
-   ionic capacitor run android
-   ```
-
-5. Set metadata for additional optional parameters:
-
-    5.1. Set the Language:
-      ```
-      metadata: {"fixedLanguage": "es"}
-      ```
-    5.2. Set the Button Color:
-      ```
-      metadata: {"buttonColor": "hexColor"}
-      ```
-    5.3. Set the Title color of the button:
-      ```
-      metadata: {"buttonTextColor": "hexColor"}
-      ```
-    5.4. Set identity Id as parameter for re-verification:
-      ```
-      metadata: {"identityId": "value"}
-      ```
+`403` - MetaMap credentials issues: please check your client id and MetaMap id
