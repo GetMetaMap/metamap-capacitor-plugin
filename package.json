@@ -1,6 +1,6 @@
 {
   "name": "metamap-capacitor-plugin",
-  "version": "3.7.4",
+  "version": "3.7.6",
   "description": "Capacitor plugin for MetaMapSDK",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
@@ -35,7 +35,7 @@
     "typescript": "~3.8.3"
   },
   "peerDependencies": {
-    "@capacitor/core": "^3.3.2"
+    "@capacitor/core": "^4.4.0"
   },
   "files": [
     "dist/",
@@ -66,7 +66,5 @@
     "url": "https://github.com/GetMetaMap/mati-capacitor-plugin/issues"
   },
   "homepage": "https://github.com/GetMetaMap/mati-capacitor-plugin/blob/main/docs/mati-capacitor.md",
-  "dependencies": {
-    "metamap-capacitor-plugin": "^1.0.3"
-  }
+  "dependencies": {}
 }
