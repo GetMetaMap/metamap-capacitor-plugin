@@ -8,7 +8,7 @@ category: 61ae8e8dba577a0010791480
 
 | LTS version (Recommended for most users): | Current Version(Latest features) |
 |-------------------------------------------|----------------------------------|
-| 3.6.0                                     | 3.7.2                            |
+| 3.7.6                                     |3.7.8                          |
 
 
 # Metamap for Capacitor Usage Guide
@@ -17,32 +17,32 @@ This is a guide to implement Metamap in the [Ionic Capacitor framework](https://
 
 ## Capacitor Demo App
 
-You can go to GitHub to download the [Metamap Capacitor demo app](https://github.com/GetMati/mati-mobile-examples/tree/main/capacitorDemoApp).
+Download the MetaMap Capacitor demo app from [GitHub](https://github.com/GetMati/mati-mobile-examples/tree/main/capacitorDemoApp).
 
 ## Install Metamap for Capacitor
 
 The following instructions use command line tools to install Metamap for Capacitor to your existing Capacitor application.
 
-1. Use the following CLI to install Metamap for your Capacitor project.
-```bash
-npm i metamap-capacitor-plugin@3.6.0
- ```
+1. Use the following CLI to install Metamap for your Capacitor project. Replace `<version_number>` with the either the LTS or current version number your application uses:
+    ```bash
+    npm i metamap-capacitor-plugin@<version_number>
+     ```
 
 1. Build your application.
-```bash
-ionic build
- ```
+    ```bash
+    ionic build
+     ```
 
 1. Update the Capacitor files.
-```bash
-npx cap sync
-```
+    ```bash
+    npx cap sync
+    ```
 
 ## Add the Metamap Button
 
 Add the Metamap button to your application's HTML and JavaScript files.
 
-`your_index.html`
+**`<your_index>.html`**
 
 ```html
 <ion-content>
@@ -51,7 +51,7 @@ Add the Metamap button to your application's HTML and JavaScript files.
 </ion-content>
 ```
 
-`your_index.ts`
+**`<your_index>.ts`**
 
 ```json
 import { Component } from '@angular/core';
@@ -83,17 +83,17 @@ export class HomePage {
 ionic capacitor run android
 ```
 
-# Launch for iOS
+## Launch for iOS
 
 1. Set minimum iOS version in `capacitor.config.json`
-```json
-     "ios": {
-      "minVersion": "12.0"
-    }
-```
+    ```json
+         "ios": {
+          "minVersion": "12.0"
+        }
+    ```
 
 1. Add the following to info.plist:
-```bash
+    ```bash
     <key>NSCameraUsageDescription</key>
     <string>MetaMap verification SDK requires camera use</string>
 
@@ -111,34 +111,34 @@ ionic capacitor run android
 
     <key>NSLocationAlwaysUsageDescription</key>
     <string>MetaMap will use your location information to provide best possible verification experience.</string>
-  ```
+    ```
 
 1. Launch the application for iOS
-```bash
-ionic capacitor run ios
-  ```
+    ```bash
+    ionic capacitor run ios
+    ```
 
 ## Metadata is an additional optional parameters:
 
 1. Set the Language:
-```bash
-metadata: {"fixedLanguage": "es"}
-```
+    ```bash
+    metadata: {"fixedLanguage": "es"}
+    ```
 
 1.  Set the Button Color:
-```bash
-metadata: {"buttonColor": "hexColor"}
-```
+    ```bash
+    metadata: {"buttonColor": "hexColor"}
+    ```
 
 1. Set the Title color of the button:
-```bash
-metadata: {"buttonTextColor": "hexColor"}
+    ```bash
+    metadata: {"buttonTextColor": "hexColor"}
    ```
 
 1. Set identity Id as parameter for re-verification:
-```bash
-metadata: {"identityId": "value"}
-```
+    ```bash
+    metadata: {"identityId": "value"}
+    ```
 
 
 ## Some error codes you may get during integration
