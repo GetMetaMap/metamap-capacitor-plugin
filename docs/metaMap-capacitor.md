@@ -8,7 +8,7 @@ category: 61ae8e8dba577a0010791480
 
 | LTS version (Recommended for most users): | Current Version(Latest features) |
 |-------------------------------------------|----------------------------------|
-| 3.8.0                                     | 3.8.0                            |
+| 3.9.0                                     | 3.9.0                            |
 
 
 # Metamap for Capacitor Usage Guide
@@ -25,7 +25,7 @@ The following instructions use command line tools to install Metamap for Capacit
 
 1. Use the following CLI to install Metamap for your Capacitor project. Replace `<version_number>` with the either the LTS or current version number your application uses:
     ```bash
-    npm i metamap-capacitor-plugin@<version_number>
+    npm i metamap-capacitor-plugin
      ```
 
 1. Build your application.
