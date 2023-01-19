@@ -8,7 +8,7 @@ category: 61ae8e8dba577a0010791480
 
 | LTS version (Recommended for most users): | Current Version(Latest features) |
 |-------------------------------------------|----------------------------------|
-| 3.9.0                                     | 3.9.0                            |
+| 3.10.0                                    | 3.10.0                           |
 
 
 # Metamap for Capacitor Usage Guide
