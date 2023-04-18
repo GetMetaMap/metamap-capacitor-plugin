@@ -66,7 +66,7 @@ public class MetaMapCapacitorPlugin extends Plugin {
 
 
 
-                        Intent flowIntent = MetamapSdk.INSTANCE.createFlowIntent(bridge.getActivity(), clientId, flowId, data);
+                        Intent flowIntent = MetamapSdk.INSTANCE.createFlowIntent(bridge.getActivity(), clientId, flowId, data, null, null);
                         startActivityForResult(call, flowIntent, "callback");
                     }
                 } catch(Exception excepion) {
