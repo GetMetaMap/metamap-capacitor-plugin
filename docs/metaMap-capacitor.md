@@ -8,7 +8,7 @@ category: 61ae8e8dba577a0010791480
 
 | LTS version (Recommended for most users): | Current Version(Latest features) |
 |-------------------------------------------|----------------------------------|
-| 4.1.0                                     | 4.1.0                            |
+| 4.4.0                                     | 4.4.0                            |
 
 
 # Metamap for Capacitor Usage Guide
@@ -53,7 +53,7 @@ Add the Metamap button to your application's HTML and JavaScript files.
 
 **`<your_index>.ts`**
 
-```json
+```html
 import { Component } from '@angular/core';
 
 import { MetaMapCapacitor } from "metamap-capacitor-plugin";
@@ -118,27 +118,42 @@ ionic capacitor run android
     ionic capacitor run ios
     ```
 
-## Metadata is an additional optional parameters:
+#Metadata is an additional optional parameter that can be used to replace certain settings:
 
-1. Set the Language:
-    ```bash
-    metadata: {"fixedLanguage": "es"}
-    ```
+### Set the Language:
+By default the SDK language is set to "en" but it is editable to the language from the list:
+"es", "fr", "pt", "ru", "tr", "de", "it", "pl", "th".
+```bash
+metaData: {"fixedLanguage": "value"}
+```
 
-1.  Set the Button Color:
-    ```bash
-    metadata: {"buttonColor": "hexColor"}
-    ```
+### Set the Button Color:
+By default main button color is white but it is editable by using hex Color format "hexColor".
+```bash
+metaData: {"buttonColor": "value"}
+```
 
-1. Set the Title color of the button:
-    ```bash
-    metadata: {"buttonTextColor": "hexColor"}
+### Set the Title color of the button:
+By default main button title color is black but it is editable by using hex Color format "hexColor".
+```bash
+metaData: {"buttonTextColor": "value"}
+```
+
+### Set identity Id as parameter for re-verification:
+```bash
+metaData: ["identityId": "value"]
    ```
 
-1. Set identity Id as parameter for re-verification:
-    ```bash
-    metadata: {"identityId": "value"}
-    ```
+### Set encryption Configuration Id as parameter for encrypting data.
+```bash
+metaData:{["encryptionConfigurationId": "value"}
+   ```
+
+### Set customization fonts as parameter.
+to add custom fonts, the project needs to have these font files, otherwise SDK will use default fonts:
+```bash
+metadata: {"regularFont": "REGULAR_FONT_NAME.ttf", "boldFont":  "BOLD_FONT_NAME.ttf"}
+   ```
 
 
 ## Some error codes you may get during integration
