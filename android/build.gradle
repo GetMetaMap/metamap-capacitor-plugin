@@ -9,16 +9,18 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://jitpack.io" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.0.0'
+        classpath 'com.android.tools.build:gradle:8.3.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0"
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
     defaultConfig {
         minSdkVersion 22
         targetSdkVersion 33
@@ -44,6 +46,7 @@ android {
 repositories {
     google()
     mavenCentral()
+    maven { url "https://jitpack.io" }
 }
 
 
@@ -51,7 +54,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
-    implementation ('com.metamap:android-sdk:3.38.0')
+    implementation ('com.metamap:android-sdk:3.42.4') {
+        exclude group: "com.airbnb.android", module: "lottie-compose"}
 }
 
 
