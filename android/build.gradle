@@ -55,7 +55,10 @@ dependencies {
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
     implementation ('com.metamap:android-sdk:3.42.4') {
-        exclude group: "com.airbnb.android", module: "lottie-compose"}
+        exclude group: "com.airbnb.android", module: "lottie-compose"
+        exclude group: "org.jetbrains.compose.runtime", module: "runtime-android"
+        exclude group: "org.jetbrains.compose.runtime", module: "runtime-desktop"
+    }
 }
 
 
