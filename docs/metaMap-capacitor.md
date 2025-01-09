@@ -8,7 +8,7 @@ category: 61ae8e8dba577a0010791480
 
 | LTS version (Recommended for most users): | Current Version(Latest features) |
 |-------------------------------------------|----------------------------------|
-| 4.6.0                                     | 4.6.0                            |
+| 4.7.5                                     | 4.7.5                            |
 
 
 # Metamap for Capacitor Usage Guide
@@ -88,7 +88,7 @@ ionic capacitor run android
 1. Set minimum iOS version in `capacitor.config.json`
     ```json
          "ios": {
-          "minVersion": "12.0"
+          "minVersion": "13.0"
         }
     ```
 
