@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.dependency 'Capacitor'
 
   # MetaMapSDK dependency, which brings in Incode SDK
-  s.dependency 'MetaMapSDK', '3.22.4'
+  s.dependency 'MetaMapSDK', '3.22.5'
 
   # Use static framework to support dependencies like Incode SDK
   s.static_framework = true
