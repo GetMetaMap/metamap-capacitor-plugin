@@ -67,8 +67,8 @@ export class HomePage {
   constructor() {}
 
   showMatiFlow() {
-    let metadataParams = { param1: "value1" };
-    let registerParams = { clientId: "5c94e3c401ddc6001be83c07", flowId: "5e962a23728ddc001b5937aa", metadata: metadataParams};
+    let metadataParams = {:};
+    let registerParams = { clientId: "YOUR_CLIENT_ID", flowId: "YOUR_FLOW_ID", metadata: metadataParams};
 
     MatiCapacitor.showMatiFlow(registerParams)
       .then( verification => console.log("verification success:" + verification.verificationId))
