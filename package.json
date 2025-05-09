@@ -1,7 +1,7 @@
 {
   "name": "metamap-capacitor-plugin",
-  "version": "4.7.9",
-  "description": "Capacitor plugin for MetaMapSDK",
+  "version": "4.8.0",
+  "description": "Capacitor plugin for MetaMap SDK",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -27,12 +27,12 @@
     "@ionic/prettier-config": "^2.0.0",
     "@ionic/swiftlint-config": "^1.1.2",
     "@rollup/plugin-node-resolve": "^13.0.6",
-    "prettier": "^2.0.5",
+    "prettier": "^2.8.8",
     "prettier-plugin-java": "^1.6.0",
-    "rimraf": "^3.0.0",
-    "rollup": "^2.21.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.79.1",
     "swiftlint": "^1.0.1",
-    "typescript": "^5.7.2"
+    "typescript": "^5.2.2"
   },
   "peerDependencies": {
     "@capacitor/core": "^7.0.0"
@@ -46,7 +46,9 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "MetaMap",
+    "identity-verification"
   ],
   "capacitor": {
     "ios": {
@@ -65,5 +67,5 @@
   "bugs": {
     "url": "https://github.com/GetMetaMap/mati-capacitor-plugin/issues"
   },
-  "homepage": "https://github.com/GetMetaMap/mati-capacitor-plugin/blob/main/docs/mati-capacitor.md"
+  "homepage": "https://github.com/GetMetaMap/mati-capacitor-plugin#readme"
 }

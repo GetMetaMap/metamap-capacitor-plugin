@@ -7,4 +7,3 @@ export interface MetaMapCapacitorPlugin {
   showMetaMapFlow(options: MetaMapParams): Promise<{ identityId: string, verificationID: string }>;
 }
 
-  
