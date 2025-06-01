@@ -18,5 +18,5 @@ Pod::Spec.new do |s|
 
   # Dependencies
   s.dependency 'Capacitor'
-  s.dependency 'MetaMapSDK', '3.23.0'
+  s.dependency 'MetaMapSDK', '3.23.3'
 end
