@@ -81,6 +81,7 @@ public class MetaMapCapacitorPlugin extends Plugin {
                             startedResult.put("verificationId", verificationId != null ? verificationId : "");
                             startedResult.put("status", "started");
                             notifyListeners("verificationCreated", startedResult);
+                            return null;
                         }
                 );
 
