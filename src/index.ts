@@ -7,6 +7,7 @@ import type { MetaMapParams } from './definitions';
 const MetaMapCapacitorUnwrapped = registerPlugin<MetaMapCapacitorPlugin>('MetaMapCapacitor', {});
 
 const MetaMapCapacitor = {
+    addEventListener: MetaMapCapacitorUnwrapped.addListener,
     showMetaMapFlow: function(options: MetaMapParams):Promise<{ identityId: string, verificationID: string }> {
         const { metadata } = options
         return MetaMapCapacitorUnwrapped.showMetaMapFlow({...options, metadata: {...metadata, sdkType: "capacitor" }})
@@ -15,4 +16,4 @@ const MetaMapCapacitor = {
 
 export * from './definitions';
 export { MetaMapCapacitor };
-  
+
