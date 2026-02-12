@@ -1,6 +1,6 @@
 {
   "name": "metamap-capacitor-plugin",
-  "version": "4.9.2",
+  "version": "4.9.3",
   "description": "Capacitor plugin for MetaMap SDK",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
@@ -20,10 +20,10 @@
   "author": "Avo Sukiasyan",
   "license": "MIT",
   "devDependencies": {
-    "@capacitor/android": "^7.0.0",
-    "@capacitor/cli": "^7.0.0",
-    "@capacitor/core": "^7.0.0",
-    "@capacitor/ios": "^7.0.0",
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/cli": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/ios": "^8.0.0",
     "@ionic/prettier-config": "^2.0.0",
     "@ionic/swiftlint-config": "^1.1.2",
     "@rollup/plugin-node-resolve": "^13.0.6",
@@ -35,7 +35,7 @@
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "@capacitor/core": "^7.0.0"
+     "@capacitor/core": ">=7.0.0 <9.0.0"
   },
   "files": [
     "dist/",
