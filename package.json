@@ -1,6 +1,6 @@
 {
   "name": "metamap-capacitor-plugin",
-  "version": "4.9.3",
+  "version": "4.9.5",
   "description": "Capacitor plugin for MetaMap SDK",
   "main": "dist/plugin.js",
   "module": "dist/esm/index.js",
